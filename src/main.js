@@ -57,7 +57,7 @@ async function startGame(mode) {
     inputQuestion.disabled = true;
 
     try {
-      const prompt = "Magbigay ka ng isang pangkaraniwang salita sa Tagalog (pangngalan) na magandang pahulaan sa larong Pinoy Henyo. Tanging ang salita lamang ang isagot mo, walang ibang text at walang bantas. Maging random ka sa pagpili.";
+      const prompt = "Magbigay ka ng isang pangkaraniwang salita sa Tagalog (pangngalan) na magandang pahulaan sa larong Pinoy Henyo. Maaring pangalan ng tao, bagay, hayop, lugar, pagkain, parte ng katawan, at iba pa. Tanging ang salita lamang ang isagot mo, walang ibang text at walang bantas. Maging random at malawak ka sa pagpili.";
       const contents = [{ role: 'user', parts: [{ text: prompt }] }];
       const reply = await callGemini(contents, "");
       currentWord = reply.trim();
