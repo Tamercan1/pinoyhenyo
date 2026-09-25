@@ -1,0 +1,115 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  min-height: 100vh; /* fallback */
+  min-height: 100dvh;
+  padding: 20px;
+  box-sizing: border-box;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+}
+
+.screen.active {
+  display: flex;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #999;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  flex: 1;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+#chat-box {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+  min-height: 300px;
+  max-height: 60vh;
+  background-color: #fafafa;
+}
+
+.msg {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  max-width: 80%;
+}
+
+.msg.user {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.msg.ai {
+  background-color: #e2e3e5;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+/* For form-ikaw buttons */
+#form-ikaw {
+  justify-content: space-between;
+}
+#form-ikaw button {
+  flex: 1;
+}
+
+.app-footer {
+  text-align: center;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: auto;
+  padding-top: 20px;
+}

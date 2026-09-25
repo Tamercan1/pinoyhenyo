@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinoy Henyo</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- MENU SCREEN -->
+    <div id="screen-menu" class="screen active">
+      <h1>Pinoy Henyo</h1>
+      <p>Sino ang taya? (Sino ang huhula?)</p>
+      <button id="btn-mode-ako">Ako</button>
+      <button id="btn-mode-ikaw">Ikaw</button>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="screen-game" class="screen">
+      <div id="chat-box"></div>
+      
+      <!-- Input for Mode 1: User Guesses -->
+      <form id="form-ako" class="input-area" style="display:none;">
+        <input type="text" id="input-question" placeholder="Magtanong ka..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+
+      <!-- Input for Mode 2: AI Guesses -->
+      <div id="form-ikaw" class="input-area" style="display:none;">
+        <button class="ans-btn" data-ans="Oo">Oo</button>
+        <button class="ans-btn" data-ans="Hindi">Hindi</button>
+        <button class="ans-btn" data-ans="Pwede">Pwede</button>
+        <button id="btn-tama" style="background:#28a745; color:white;">Tama!</button>
+      </div>
+
+      <button id="btn-surrender" style="margin-top: 15px;">Surrender</button>
+    </div>
+
+    <div id="screen-result" class="screen">
+      <h2 id="result-msg">Congratulations!</h2>
+      <p id="reveal-word"></p>
+      <button id="btn-again">Another round?</button>
+    </div>
+
+    <footer class="app-footer">Coded by: Tamercan Wawa</footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
