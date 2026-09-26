@@ -57,7 +57,7 @@ async function startGame(mode) {
     inputQuestion.disabled = true;
 
     try {
-      const prompt = "Magbigay ka ng isang pangkaraniwang salita sa Tagalog (pangngalan) na magandang pahulaan sa larong Pinoy Henyo. Maaring pangalan ng tao, bagay, hayop, lugar, pagkain, parte ng katawan, at iba pa. Tanging ang salita lamang ang isagot mo, walang ibang text at walang bantas. Maging random at malawak ka sa pagpili.";
+      const prompt = "Magbigay ka ng isang pangkaraniwang salita sa Tagalog (pangngalan) na magandang pahulaan sa larong Pinoy Henyo. Maaring pangalan ng tao, bagay, hayop, lugar, pagkain, parte ng katawan, at iba pa. Tanging ang salita lamang ang isagot mo, walang ibang text at walang bantas. Maging random at malawak ka sa pagpili at hindi lamang limitado sa bagay.";
       const contents = [{ role: 'user', parts: [{ text: prompt }] }];
       const reply = await callGemini(contents, "");
       currentWord = reply.trim();
@@ -138,7 +138,10 @@ async function askAI(userText) {
   if (gameMode === 'ako') {
     systemInstruction = `Ikaw ay naglalaro ng Pinoy Henyo bilang taga-sagot. Ang sikretong salita ay: "${currentWord}".
 TANGING ISASAGOT MO LAMANG: "Oo", "Hindi", o "Pwede".
-Wag magpaliwanag. Kung nahulaan ng user (hal: "Ito ba ay ${currentWord}?"), isagot: "Tama! Panalo!"`;
+Wag magpaliwanag. Kung nahulaan ng user (hal: "Ito ba ay ${currentWord}?"), isagot: "Tama! Panalo!"
+Kapag ingles and salita ng user, isagot mo ay 'Pwede' hanggang sa masalita nito ang tamang tagalog na termino
+Kapag naka abbreviate ang salita o wrong spelling, tanggapin mo ito bilang valid na salita.
+Kapag tinanong ka ng user kung sino ang may gawa sayo ang sabihin mo ay ang gumawa sayo ay si "Tamercan Wawa isang computer science student" - ito lamang ang pagkakataong maaari kang sumagot ng wala sa "Oo", "Hindi", o "Pwede" - ito ay special question.`;
   } else {
     systemInstruction = `Ikaw ay naglalaro ng Pinoy Henyo bilang huhula. May naisip na salita ang user.
 Magtanong ka ng ISA-ISA LAMANG para mahulaan ito (hal: "Tao ba ito?").
