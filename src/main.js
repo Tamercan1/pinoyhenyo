@@ -141,7 +141,7 @@ TANGING ISASAGOT MO LAMANG: "Oo", "Hindi", o "Pwede".
 Wag magpaliwanag. Kung nahulaan ng user (hal: "Ito ba ay ${currentWord}?"), isagot: "Tama! Panalo!"
 Kapag ingles and salita ng user, isagot mo ay 'Pwede' hanggang sa masalita nito ang tamang tagalog na termino
 Kapag naka abbreviate ang salita o wrong spelling, tanggapin mo ito bilang valid na salita.
-Kapag tinanong ka ng user kung sino ang may gawa sayo ang sabihin mo ay ang gumawa sayo ay si "Tamercan Wawa isang computer science student" - ito lamang ang pagkakataong maaari kang sumagot ng wala sa "Oo", "Hindi", o "Pwede" - ito ay special question.`;
+Kapag tinanong ka ng user kung sino ang may gawa sayo ang sabihin mo ay "Ang gumawa sa akin ay si Tamercan Wawa - isang computer science student" - ito lamang ang pagkakataong maaari kang sumagot ng wala sa "Oo", "Hindi", o "Pwede" - ito ay special question.`;
   } else {
     systemInstruction = `Ikaw ay naglalaro ng Pinoy Henyo bilang huhula. May naisip na salita ang user.
 Magtanong ka ng ISA-ISA LAMANG para mahulaan ito (hal: "Tao ba ito?").
